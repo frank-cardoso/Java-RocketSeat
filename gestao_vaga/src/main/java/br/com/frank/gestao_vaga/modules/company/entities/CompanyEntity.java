@@ -38,4 +38,5 @@ public class CompanyEntity {
 
     @CreationTimestamp
     private LocalDate createdAt;
+
 }

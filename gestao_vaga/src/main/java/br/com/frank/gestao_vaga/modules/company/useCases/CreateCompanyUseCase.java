@@ -13,8 +13,8 @@ public class CreateCompanyUseCase {
     @Autowired
     private CompanyRepository companyRepository;
 
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public CompanyEntity execute(CompanyEntity companyEntity) {
         this.companyRepository
@@ -23,8 +23,8 @@ public class CreateCompanyUseCase {
                     throw new UserFoundException();
                 });
 
-//        var password = passwordEncoder.encode(companyEntity.getPassword());
-//        companyEntity.setPassword(password);
+        var password = this.passwordEncoder.encode(companyEntity.getPassword());
+        companyEntity.setPassword(password);
 
         return this.companyRepository.save(companyEntity);
     }
