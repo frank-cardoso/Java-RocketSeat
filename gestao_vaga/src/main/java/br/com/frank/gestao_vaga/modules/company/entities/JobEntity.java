@@ -21,6 +21,7 @@ public class JobEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
     private String description;
     private String benefits;
 
